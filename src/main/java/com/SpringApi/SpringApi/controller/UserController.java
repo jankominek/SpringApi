@@ -38,7 +38,7 @@ public class UserController {
         return userService.verifyAccount(userVerification);
     }
     @GetMapping("/auth/verification-check")
-    public UserInfoDto getUserInfo(@RequestBody String email){
+    public UserInfoDto getpizzeriaApplicationSpringReactUserInfo(@RequestBody String email){
         return userService.getUserInfo(email);
     }
 

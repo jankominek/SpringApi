@@ -29,6 +29,14 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @OneToOne()
+    @JoinColumn(name = "id_voivodeship", referencedColumnName = "id_voivodeship")
+    private Voivodeship voivodeship;
+
+    @OneToOne()
+    @JoinColumn(name = "id_city", referencedColumnName = "id_city")
+    private City city;
+
     @Column(name = "typ")
     @Enumerated(EnumType.STRING)
     private PersonType type;
@@ -40,5 +48,5 @@ public class User {
     private Boolean isVerified;
 
     @OneToMany(mappedBy = "userId", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Order> orders;
+    private List<Indent> orders;
 }
