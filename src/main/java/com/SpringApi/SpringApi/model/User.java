@@ -2,14 +2,17 @@ package com.SpringApi.SpringApi.model;
 
 import com.SpringApi.SpringApi.utils.PersonType;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.util.List;
+import java.util.UUID;
 
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -17,9 +20,8 @@ import java.util.List;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name ="user_id")
-    private Long userId;
+    private UUID userId;
 
     @Column(name = "email")
     private String email;
